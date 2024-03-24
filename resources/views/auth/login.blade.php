@@ -8,7 +8,15 @@
 		<!--begin::Root-->
 		<div class="d-flex flex-column flex-root" id="kt_app_root">
 			<!--begin::Page bg image-->
-			<style>body { background-image: url('assets/media/auth/bg4.jpg'); } [data-bs-theme="dark"] body { background-image: url('assets/media/auth/bg4-dark.jpg'); }</style>
+			<style>
+				body {
+					background-image: url('assets/media/auth/bg4.jpg'); 
+				} 
+				
+				[data-bs-theme="dark"] body { 
+					background-image: url('assets/media/auth/bg4-dark.jpg');
+				}
+			</style>
 			<!--end::Page bg image-->
 			<!--begin::Authentication - Sign-in -->
 			<div class="d-flex flex-column flex-column-fluid flex-lg-row">
@@ -16,14 +24,11 @@
 				<div class="d-flex flex-center w-lg-50 pt-15 pt-lg-0 px-10">
 					<!--begin::Aside-->
 					<div class="d-flex flex-center flex-lg-start flex-column">
-						<!--begin::Logo-->
-						<a href="index.html" class="mb-7">
-							<img alt="Logo" src="assets/media/logos/custom-3.svg" />
-						</a>
-						<!--end::Logo-->
-						<!--begin::Title-->
-						<h2 class="text-white fw-normal m-0">Branding tools designed for your business</h2>
-						<!--end::Title-->
+						<img alt="Logo" class="mb-7" src="assets/media/logos/df_logo.png" style="width: 50px; height: auto;" />
+						<h1 class="text-white display-3 mb-7">
+							Dash Fusion Admin
+						</h1>
+						<h2 class="text-white fw-normal m-0">Ready To Use Laravel Admin Template</h2>
 					</div>
 					<!--begin::Aside-->
 				</div>

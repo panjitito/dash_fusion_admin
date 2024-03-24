@@ -3,7 +3,7 @@
 	<head>
 		<title>@yield('title')</title>
 		<meta charset="utf-8" />
-		<meta name="description" content="Dash Fusion Admin is a reliable and ready to use laravel admin template" />
+		<meta name="description" content="Dash Fusion Admin is a ready to use laravel admin template" />
 		<meta name="keywords" content="web, admin, template, laravel" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta property="og:locale" content="en_US" />
