@@ -208,8 +208,10 @@ var KTSigninGeneral = function () {
 
             if (isValidUrl(submitButton.closest('form').getAttribute('action'))) {
                 handleSubmitAjax(); // use for ajax submit
+                console.log('handleSubmitAjax');
             } else {
                 handleSubmitDemo(); // used for demo purposes only
+                console.log('handleSubmitDemo');
             }
         }
     };
