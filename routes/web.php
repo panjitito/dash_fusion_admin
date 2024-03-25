@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::redirect('/', '/login', 301);
 
-$routes = [
+/*$routes = [
     'login' => [
         'prefix' => 'login',
         'controller' => LoginController::class,
@@ -22,4 +22,4 @@ foreach ($routes as $module => $data) {
             Route::{ $route[0] }($route[1], [$data['controller'], $route[2]])->name($route[2]);
         }
     });
-}
+}*/
