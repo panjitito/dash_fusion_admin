@@ -28,7 +28,7 @@
 				<div class="d-flex flex-column-fluid flex-lg-row-auto justify-content-center justify-content-lg-end p-12 p-lg-20">
 					<div class="bg-body d-flex flex-column align-items-stretch flex-center rounded-4 w-md-600px p-20">
 						<div class="d-flex flex-center flex-column flex-column-fluid px-lg-10 pb-15 pb-lg-20">
-							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="index.html" action="{{ url('/login') }}" method="POST">
+							<form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" data-kt-redirect-url="{{ url('/dashboard') }}" action="{{ url('/login') }}">
 								@csrf
 								<div class="text-center mb-11">
 									<h1 class="text-gray-900 fw-bolder mb-3">Sign In</h1>
@@ -132,5 +132,5 @@
 @endsection
 
 @section('page_specific_js')
-		<script src="{{ asset('assets/js/custom/authentication/sign-in/general.js') }}"></script>
+		<script src="{{ asset('assets/js/custom/authentication/sign-in/general_df.js') }}"></script>
 @endsection

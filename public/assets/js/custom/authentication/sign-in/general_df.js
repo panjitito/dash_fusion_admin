@@ -124,6 +124,8 @@ var KTSigninGeneral = function () {
 
                     // Check axios library docs: https://axios-http.com/docs/intro
                     axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form)).then(function (response) {
+                        console.log(response);
+
                         if (response) {
                             form.reset();
 
@@ -141,7 +143,7 @@ var KTSigninGeneral = function () {
                             const redirectUrl = form.getAttribute('data-kt-redirect-url');
 
                             if (redirectUrl) {
-                                location.href = redirectUrl;
+                                //location.href = redirectUrl;
                             }
                         } else {
                             // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
