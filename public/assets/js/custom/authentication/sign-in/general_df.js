@@ -124,8 +124,6 @@ var KTSigninGeneral = function () {
 
                     // Check axios library docs: https://axios-http.com/docs/intro
                     axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form)).then(function (response) {
-                        console.log(response);
-
                         if (response) {
                             form.reset();
 
@@ -143,7 +141,7 @@ var KTSigninGeneral = function () {
                             const redirectUrl = form.getAttribute('data-kt-redirect-url');
 
                             if (redirectUrl) {
-                                location.href = redirectUrl;
+                                //location.href = redirectUrl;
                             }
                         } else {
                             // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
@@ -158,8 +156,16 @@ var KTSigninGeneral = function () {
                             });
                         }
                     }).catch(function (error) {
+                        let errorMessage = "Sorry, looks like there are some errors detected, please try again.";
+
+                        // Specifically check for a 422 status error
+                        if (error.response && error.response.status === 422) {
+                            // Update the message to be more specific about the validation error
+                            errorMessage = "Sorry, the email or password is incorrect, please try again.";
+                        }
+
                         Swal.fire({
-                            text: "Sorry, looks like there are some errors detected, please try again.",
+                            text: errorMessage,
                             icon: "error",
                             buttonsStyling: false,
                             confirmButtonText: "Ok, got it!",
