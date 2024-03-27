@@ -143,7 +143,7 @@ var KTSigninGeneral = function () {
                             const redirectUrl = form.getAttribute('data-kt-redirect-url');
 
                             if (redirectUrl) {
-                                //location.href = redirectUrl;
+                                location.href = redirectUrl;
                             }
                         } else {
                             // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/

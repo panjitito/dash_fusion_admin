@@ -1,15 +1,4 @@
 <!DOCTYPE html>
-<!--
-Author: Keenthemes
-Product Name: MetronicProduct Version: 8.2.4
-Purchase: https://1.envato.market/EA4JP
-Website: http://www.keenthemes.com
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
 <html lang="en">
 	<!--begin::Head-->
 	<head>
@@ -23,6 +12,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:title" content="Metronic - The World's #1 Selling Bootstrap Admin Template by KeenThemes" />
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Metronic by Keenthemes" />
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<link rel="canonical" href="http://index.html" />
 		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
 		<!--begin::Fonts(mandatory for all pages)-->
@@ -429,7 +419,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--end::Menu item-->
 										<!--begin::Menu item-->
 										<div class="menu-item px-5">
-											<a href="authentication/layouts/corporate/sign-in.html" class="menu-link px-5">Sign Out</a>
+											<a href="#" id="logoutLink" class="menu-link px-5">Sign Out</a>
 										</div>
 										<!--end::Menu item-->
 									</div>
@@ -11074,6 +11064,36 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="assets/js/custom/utilities/modals/offer-a-deal/main.js"></script>
 		<script src="assets/js/custom/utilities/modals/create-app.js"></script>
 		<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				const logoutLink = document.getElementById('logoutLink');
+
+				logoutLink.addEventListener('click', function(event) {
+					event.preventDefault(); // Prevent the default link behavior
+
+					fetch('/logout', {
+						method: 'POST',
+						headers: {
+							'X-Requested-With': 'XMLHttpRequest', // Necessary for Laravel to recognize the request as AJAX
+							'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content') // CSRF token
+						},
+						credentials: 'same-origin' // Needed for cookies to be sent with the request
+					}).then(response => {
+						if (response.ok) {
+							// Handle post-logout behavior here
+							// For example, redirect to the login page
+							window.location.href = '/login';
+						} else {
+							// Handle errors (optional)
+							console.error('Logout failed');
+						}
+					}).catch(error => {
+						// Handle network errors
+						console.error('Network error:', error);
+					});
+				});
+			});
+		</script>
 		<!--end::Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
