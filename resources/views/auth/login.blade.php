@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title', 'Login - Dash Fusion Admin')
+@section('title', 'Login')
 
 @section('body_parameter') id="kt_body" class="app-blank bgi-size-cover bgi-attachment-fixed bgi-position-center bgi-no-repeat" @endsection
 

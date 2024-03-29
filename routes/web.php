@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 
 Route::redirect('/', '/login', 301);
 
-// Temporary logout trigger
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    });
 });
 
 /*$routes = [

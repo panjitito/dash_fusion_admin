@@ -1,8 +1,6 @@
 "use strict";
 
-// Class definition
 var KTSigninGeneral = function () {
-    // Elements
     var form;
     var submitButton;
     var validator;
@@ -125,19 +123,6 @@ var KTSigninGeneral = function () {
                     // Check axios library docs: https://axios-http.com/docs/intro
                     axios.post(submitButton.closest('form').getAttribute('action'), new FormData(form)).then(function (response) {
                         if (response) {
-                            form.reset();
-
-                            // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
-                            Swal.fire({
-                                text: "You have successfully logged in!",
-                                icon: "success",
-                                buttonsStyling: false,
-                                confirmButtonText: "Ok, got it!",
-                                customClass: {
-                                    confirmButton: "btn btn-primary"
-                                }
-                            });
-
                             const redirectUrl = form.getAttribute('data-kt-redirect-url');
 
                             if (redirectUrl) {
@@ -173,12 +158,6 @@ var KTSigninGeneral = function () {
                                 confirmButton: "btn btn-primary"
                             }
                         });
-                    }).then(() => {
-                        // Hide loading indication
-                        submitButton.removeAttribute('data-kt-indicator');
-
-                        // Enable button
-                        submitButton.disabled = false;
                     });
                 } else {
                     // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
