@@ -34,7 +34,7 @@
 						<div class="d-flex align-items-center mb-3">
 							<!--begin::Logo-->
 							<a href="index.html">
-								<img alt="Logo" src="assets/media/logos/demo36.svg" class="me-7 d-none d-lg-inline h-25px" />
+								<img alt="Logo" src="assets/media/logos/df_logo.png" class="me-7 d-none d-lg-inline h-25px" />
 							</a>
 							<!--end::Logo-->
 							<!--begin::Breadcrumb-->
