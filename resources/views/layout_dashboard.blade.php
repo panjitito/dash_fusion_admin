@@ -44,7 +44,15 @@
         const logoutLink = document.getElementById('logoutLink');
 
         logoutLink.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default link behavior
+            event.preventDefault();
+
+            Swal.fire({
+                title: 'Signing out...',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
 
             fetch('/logout', {
                 method: 'POST',
@@ -58,9 +66,11 @@
                     window.location.href = '/login';
                 } else {
                     console.error('Logout failed');
+                    Swal.fire('Technical Error', 'There was a technical issue when signing out. Please try again.', 'error');
                 }
             }).catch(error => {
                 console.error('Network error:', error);
+                Swal.fire('Network Error', 'There was a network issue when signing out. Please try again.', 'error');
             });
         });
     });
