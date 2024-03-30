@@ -9,7 +9,8 @@
 @section('body_parameter') id="kt_app_body" data-kt-app-header-fixed-mobile="true" data-kt-app-toolbar-enabled="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" class="app-default" @endsection
 
 @section('content')
-
+    @yield('main')
+    @yield('additional')
 @endsection
 
 @section('page_specific_js')
