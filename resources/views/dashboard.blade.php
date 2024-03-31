@@ -1,4 +1,4 @@
-@extends('layout_dashboard')
+@extends('layouts.afterlogin')
 
 @section('title', 'Dashboard')
 
