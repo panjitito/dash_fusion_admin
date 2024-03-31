@@ -1428,3 +1428,9 @@
 </div>
 <!--end::Card-->
 @endsection
+
+@section('page_more_specific_js')
+<script src="assets/js/custom/apps/user-management/users/list/table.js"></script>
+<script src="assets/js/custom/apps/user-management/users/list/export-users.js"></script>
+<script src="assets/js/custom/apps/user-management/users/list/add.js"></script>
+@endsection

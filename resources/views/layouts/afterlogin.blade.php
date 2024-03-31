@@ -76,10 +76,6 @@
                             <!--end::Title-->
                         </div>
                         <!--end::Page title-->
-                        <!--begin::Action-->
-                        <a href="#" class="btn btn-primary d-flex flex-center h-35px h-lg-40px" data-bs-toggle="modal" data-bs-target="#kt_modal_create_campaign">Create 
-                        <span class="d-none d-sm-inline ps-2">New</span></a>
-                        <!--end::Action-->
                     </div>
                     <!--end::Header wrapper-->
                 </div>
@@ -88,58 +84,6 @@
             <!--end::Header-->
             <!--begin::Wrapper-->
             <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
-                <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar">
-                    <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex align-items-stretch">
-                        <!--begin::Navs-->
-                        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5 active" href="index.html">Overview</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/settings.html">Settings</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/security.html">Security</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/billing.html">Billing</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/statements.html">Statements</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/referrals.html">Referrals</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/api-keys.html">API Keys</a>
-                            </li>
-                            <!--end::Nav item-->
-                            <!--begin::Nav item-->
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-5 me-lg-8 pt-2 pb-3 pt-lg-4 pb-lg-5" href="account/logs.html">Logs</a>
-                            </li>
-                            <!--end::Nav item-->
-                        </ul>
-                        <!--begin::Navs-->
-                    </div>
-                    <!--end::Toolbar container-->
-                </div>
-                <!--end::Toolbar-->
                 <!--begin::Sidebar-->
                 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
                     <!--begin::Header-->
@@ -1400,6 +1344,7 @@
 <script src="assets/js/custom/utilities/modals/offer-a-deal/main.js"></script>
 <script src="assets/js/custom/utilities/modals/create-app.js"></script>
 <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+@yield('page_more_specific_js')
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
