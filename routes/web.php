@@ -7,9 +7,19 @@ use Illuminate\Http\Request;
 Route::redirect('/', '/login', 301);
 
 Route::middleware('auth')->group(function () {
+    Route::prefix('app')->group(function () {
+        Route::prefix('admin')->group(function () {
+            Route::prefix('user')->group(function () {
+                Route::get('/list', function () {
+                    return view('admin.user.list');
+                })->name('admin.user.list');
+            });
+        });
+    });
+
     Route::get('/dashboard', function () {
         return view('dashboard');
-    });
+    })->name('dashboard');
 });
 
 /*$routes = [
