@@ -1319,7 +1319,7 @@
 @endsection
 
 @section('page_specific_js')
-<script src="assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+<script src="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.js') }}"></script>
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
@@ -1331,19 +1331,19 @@
 <script src="https://cdn.amcharts.com/lib/5/geodata/usaLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZonesLow.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/geodata/worldTimeZoneAreasLow.js"></script>
-<script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-<script src="assets/js/widgets.bundle.js"></script>
-<script src="assets/js/custom/widgets.js"></script>
-<script src="assets/js/custom/apps/chat/chat.js"></script>
-<script src="assets/js/custom/utilities/modals/create-campaign.js"></script>
-<script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-<script src="assets/js/custom/utilities/modals/offer-a-deal/type.js"></script>
-<script src="assets/js/custom/utilities/modals/offer-a-deal/details.js"></script>
-<script src="assets/js/custom/utilities/modals/offer-a-deal/finance.js"></script>
-<script src="assets/js/custom/utilities/modals/offer-a-deal/complete.js"></script>
-<script src="assets/js/custom/utilities/modals/offer-a-deal/main.js"></script>
-<script src="assets/js/custom/utilities/modals/create-app.js"></script>
-<script src="assets/js/custom/utilities/modals/users-search.js"></script>
+<script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
+<script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
+<script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-campaign.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/offer-a-deal/type.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/offer-a-deal/details.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/offer-a-deal/finance.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/offer-a-deal/complete.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/offer-a-deal/main.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
+<script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
 @yield('page_more_specific_js')
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
