@@ -412,7 +412,6 @@
                 </tr>
             </thead>
             <tbody class="text-gray-600 fw-semibold">
-    
                 <tr>
                     <td>
                         <div class="form-check form-check-sm form-check-custom form-check-solid">
@@ -461,7 +460,6 @@
                         <!--end::Menu-->
                     </td>
                 </tr>
-                
             </tbody>
         </table>
         <!--end::Table-->
