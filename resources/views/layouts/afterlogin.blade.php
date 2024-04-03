@@ -408,83 +408,25 @@
                                                 <!--begin:Menu item-->
                                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
                                                     <!--begin:Menu link-->
-                                                    <span class="menu-link">
+                                                    <a class="menu-link" href="{{ route('admin.user.list') }}">
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
                                                         <span class="menu-title">Users</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </span>
+                                                    </a>
                                                     <!--end:Menu link-->
-                                                    <!--begin:Menu sub-->
-                                                    <div class="menu-sub menu-sub-accordion">
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item">
-                                                            <!--begin:Menu link-->
-                                                            <a class="menu-link" href="{{ route('admin.user.list') }}">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span>
-                                                                <span class="menu-title">Users List</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item">
-                                                            <!--begin:Menu link-->
-                                                            <a class="menu-link" href="apps/user-management/users/view.html">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span>
-                                                                <span class="menu-title">View User</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                    </div>
-                                                    <!--end:Menu sub-->
                                                 </div>
                                                 <!--end:Menu item-->
                                                 <!--begin:Menu item-->
                                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                                                     <!--begin:Menu link-->
-                                                    <span class="menu-link">
+                                                    <a class="menu-link" href="#">
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
                                                         <span class="menu-title">Roles</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </span>
+                                                    </a>
                                                     <!--end:Menu link-->
-                                                    <!--begin:Menu sub-->
-                                                    <div class="menu-sub menu-sub-accordion">
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item">
-                                                            <!--begin:Menu link-->
-                                                            <a class="menu-link" href="apps/user-management/roles/list.html">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span>
-                                                                <span class="menu-title">Roles List</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                        <!--begin:Menu item-->
-                                                        <div class="menu-item">
-                                                            <!--begin:Menu link-->
-                                                            <a class="menu-link" href="apps/user-management/roles/view.html">
-                                                                <span class="menu-bullet">
-                                                                    <span class="bullet bullet-dot"></span>
-                                                                </span>
-                                                                <span class="menu-title">View Role</span>
-                                                            </a>
-                                                            <!--end:Menu link-->
-                                                        </div>
-                                                        <!--end:Menu item-->
-                                                    </div>
-                                                    <!--end:Menu sub-->
                                                 </div>
                                                 <!--end:Menu item-->
                                                 <!--begin:Menu item-->
