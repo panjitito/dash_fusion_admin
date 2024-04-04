@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 
 Route::redirect('/', '/login', 301);
@@ -10,9 +10,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('app')->group(function () {
         Route::prefix('admin')->group(function () {
             Route::prefix('user')->group(function () {
-                Route::get('/list', function () {
-                    return view('admin.user.list');
-                })->name('admin.user.list');
+                Route::get('/list', [UserController::class, 'index'])->name('admin.user.list');
             });
         });
     });
