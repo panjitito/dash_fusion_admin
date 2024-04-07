@@ -4,7 +4,9 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Str;
+use App\Models\User;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
@@ -40,5 +42,26 @@ class UserFactory extends Factory
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
+    }
+
+    public function administrator(): static
+    {
+        return $this->afterCreating(function (User $user) {
+                $user->assignRole('Administrator');
+            });
+    }
+
+    public function editor(): static
+    {
+        return $this->afterCreating(function (User $user) {
+                $user->assignRole('Editor');
+            });
+    }
+
+    public function member(): static
+    {
+        return $this->afterCreating(function (User $user) {
+                $user->assignRole('Member');
+            });
     }
 }
