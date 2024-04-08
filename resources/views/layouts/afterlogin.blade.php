@@ -432,7 +432,7 @@
                                                 <!--begin:Menu item-->
                                                 <div class="menu-item">
                                                     <!--begin:Menu link-->
-                                                    <a class="menu-link" href="apps/user-management/permissions.html">
+                                                    <a class="menu-link" href="{{ route('admin.user.permission') }}">
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>

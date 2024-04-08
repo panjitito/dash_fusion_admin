@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PermissionController;
 use Illuminate\Http\Request;
 
 Route::redirect('/', '/login', 301);
