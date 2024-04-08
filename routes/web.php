@@ -11,6 +11,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('admin')->group(function () {
             Route::prefix('user')->group(function () {
                 Route::get('/list', [UserController::class, 'index'])->name('admin.user.list');
+                Route::get('/permission', [PermissionController::class, 'index'])->name('admin.user.permission');
             });
         });
     });
