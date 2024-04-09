@@ -23,9 +23,6 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function ($view) {
             $menus = Menus::whereNull('parent_id')->with('children.children')->orderBy('order')->get();
-
-            dd($menus);
-
             $view->with('menus', $menus);
         });
     }
