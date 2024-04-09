@@ -20,4 +20,9 @@ class Menus extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function children()
+    {
+        return $this->hasMany(Menus::class, 'parent_id');
+    }
 }
