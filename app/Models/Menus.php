@@ -14,8 +14,10 @@ class Menus extends Model
     protected $fillable = [
         'title',
         'parent_id',
-        'url',
+        'route_name',
         'order',
         'icon',
+        'created_at',
+        'updated_at'
     ];
 }
