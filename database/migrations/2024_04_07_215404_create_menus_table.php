@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->integer('parent_id')->nullable();
-            $table->string('url')->nullable();
+            $table->string('route_name')->nullable();
             $table->integer('order')->default(0);
             $table->text('icon')->default('<span class="menu-bullet"><span class="bullet bullet-dot"></span></span>');
             $table->timestamps();
