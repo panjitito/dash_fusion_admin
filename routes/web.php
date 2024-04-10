@@ -3,23 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Middleware\AfterLoginComposer;
 use Illuminate\Http\Request;
 
 Route::redirect('/', '/login', 301);
 
 Route::middleware('auth')->group(function () {
     Route::prefix('app')->group(function () {
+        Route::get('/dashboard', function () {
+            return view('dashboard');
+        })->name('dashboard');
+
         Route::prefix('admin')->group(function () {
             Route::prefix('user')->group(function () {
                 Route::get('/list', [UserController::class, 'index'])->name('admin.user.list');
                 Route::get('/permission', [PermissionController::class, 'index'])->name('admin.user.permission');
             });
         });
-    });
-
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    })->middleware(AfterLoginComposer::class);
 });
 
 /*$routes = [

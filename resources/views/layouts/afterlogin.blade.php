@@ -534,6 +534,8 @@
 <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
 @yield('page_more_specific_js')
 <script>
+    console.log({{ $menus }});
+
     document.getElementById('current-year').textContent = new Date().getFullYear();
 
     document.addEventListener('DOMContentLoaded', function() {
