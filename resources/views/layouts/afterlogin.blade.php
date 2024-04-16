@@ -9,15 +9,10 @@
 @section('body_parameter') id="kt_app_body" data-kt-app-header-fixed-mobile="true" data-kt-app-toolbar-enabled="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" class="app-default" @endsection
 
 @section('content')
-    <!--begin::App-->
     <div class="d-flex flex-column flex-root app-root" id="kt_app_root">
-        <!--begin::Page-->
         <div class="app-page flex-column flex-column-fluid" id="kt_app_page">
-            <!--begin::Header-->
             <div id="kt_app_header" class="app-header" data-kt-sticky="true" data-kt-sticky-activate="{default: false, lg: true}" data-kt-sticky-name="app-header-sticky" data-kt-sticky-offset="{default: false, lg: '300px'}">
-                <!--begin::Header container-->
                 <div class="app-container container-fluid d-flex flex-stack" id="kt_app_header_container">
-                    <!--begin::Sidebar toggle-->
                     <div class="d-flex align-items-center d-block d-lg-none ms-n3" title="Show sidebar menu">
                         <div class="btn btn-icon btn-active-color-primary w-35px h-35px me-2" id="kt_app_sidebar_mobile_toggle">
                             <i class="ki-duotone ki-abstract-14 fs-1">
@@ -32,61 +27,35 @@
                         </a>
                         <!--end::Logo image-->
                     </div>
-                    <!--end::Sidebar toggle-->
-                    <!--begin::Header wrapper-->
                     <div class="d-flex flex-stack flex-lg-row-fluid" id="kt_app_header_wrapper">
-                        <!--begin::Page title-->
                         <div class="page-title gap-4 me-3 mb-5 mb-lg-0" data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_header_wrapper'}">
                             <div class="d-flex align-items-center mb-3">
-                                <!--begin::Logo-->
                                 <a href="index.html">
                                     <img alt="Logo" src="{{ asset('assets/media/logos/df_logo.png') }}" class="me-7 d-none d-lg-inline h-25px" />
                                 </a>
-                                <!--end::Logo-->
-                                <!--begin::Breadcrumb-->
                                 <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7">
-                                    <!--begin::Item-->
                                     <li class="breadcrumb-item text-gray-700 fw-bold lh-1 mx-n1">
                                         <a href="index.html" class="text-hover-primary">
                                             <i class="ki-duotone ki-home text-gray-700 fs-6"></i>
                                         </a>
                                     </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
                                     <li class="breadcrumb-item">
                                         <i class="ki-duotone ki-right fs-7 text-gray-700"></i>
                                     </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
                                     <li class="breadcrumb-item text-gray-700 fw-bold lh-1 mx-n1">Pages</li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
                                     <li class="breadcrumb-item">
                                         <i class="ki-duotone ki-right fs-7 text-gray-700"></i>
                                     </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
                                     <li class="breadcrumb-item text-gray-500 mx-n1">Account</li>
-                                    <!--end::Item-->
                                 </ul>
-                                <!--end::Breadcrumb-->
                             </div>
-                            <!--begin::Title-->
                             <h1 class="text-gray-900 fw-bolder m-0">Account</h1>
-                            <!--end::Title-->
                         </div>
-                        <!--end::Page title-->
                     </div>
-                    <!--end::Header wrapper-->
                 </div>
-                <!--end::Header container-->
             </div>
-            <!--end::Header-->
-            <!--begin::Wrapper-->
             <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
-                <!--begin::Sidebar-->
                 <div id="kt_app_sidebar" class="app-sidebar flex-column" data-kt-drawer="true" data-kt-drawer-name="app-sidebar" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="250px" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_app_sidebar_mobile_toggle">
-                    <!--begin::Header-->
                     <div class="app-sidebar-header d-flex flex-column px-10 pt-8" id="kt_app_sidebar_header">
                         <!--begin::Brand-->
                         <div class="d-flex flex-stack mb-10">
@@ -348,20 +317,50 @@
                         </div>
                         <!--end::Brand-->
                     </div>
-                    <!--end::Header-->
-                    <!--begin::Navs-->
                     <div class="app-sidebar-navs flex-column-fluid" id="kt_app_sidebar_navs">
                         <div id="kt_app_sidebar_navs_wrappers" class="hover-scroll-y mx-3 my-2" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_header, #kt_app_sidebar_projects" data-kt-scroll-wrappers="#kt_app_sidebar_navs" data-kt-scroll-offset="5px">
-                            <!--begin::Sidebar menu-->
                             <div id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false" class="menu menu-column menu-rounded menu-sub-indention menu-state-bullet-primary px-4">
-                                <!--begin::Heading-->
                                 <div class="menu-item">
                                     <div class="menu-content menu-heading text-uppercase fs-7">Pages</div>
                                 </div>
-                                <!--end::Heading-->
-                                <!--begin::Menu Item-->
+                                @foreach($menus as $menu)
+                                <div data-kt-menu-trigger="click" class="menu-item @if ($menu->children->isNotEmpty()) menu-accordion @endif">
+                                    @if ($menu->children->isNotEmpty())
+                                    <span class="menu-link">
+                                        {!! $menu->icon !!}
+                                        <span class="menu-title">{{ $menu->title }}</span>
+                                        <span class="menu-arrow"></span>
+                                    </span>
+                                    <div class="menu-sub menu-sub-accordion">
+                                        @foreach($menu->children as $child)
+                                        <div data-kt-menu-trigger="click" class="menu-item @if ($child->children->isNotEmpty()) menu-accordion @endif">
+                                            @if ($child->children->isNotEmpty())
+                                            <span class="menu-link">
+                                                {!! $menu->icon !!}
+                                                <span class="menu-title">{{ $menu->title }}</span>
+                                                <span class="menu-arrow"></span>
+                                            </span>
+                                            <div class="menu-sub menu-sub-accordion">
+                                                
+                                            </div>
+                                            @else
+                                            <a class="menu-link" href="{{ route($menu->route_name) }}">
+                                                {!! $menu->icon !!}
+                                                <span class="menu-title">{{ $menu->title }}</span>
+                                            </a>
+                                            @endif
+                                        </div>
+                                        @endforeach
+                                    </div>
+                                    @else
+                                    <a class="menu-link" href="{{ route($menu->route_name) }}">
+                                        {!! $menu->icon !!}
+                                        <span class="menu-title">{{ $menu->title }}</span>
+                                    </a>
+                                    @endif
+                                </div>
+                                @endforeach
                                 <div data-kt-menu-trigger="click" class="menu-item here show">
-                                    <!--begin::Menu link-->
                                     <a class="menu-link active" href="{{ route('dashboard') }}">
                                         <span class="menu-icon">
                                             <i class="ki-duotone ki-home-2 fs-2">
@@ -369,16 +368,10 @@
                                                 <span class="path2"></span>
                                             </i>
                                         </span>
-                                        <!--begin::Title-->
                                         <span class="menu-title">Dashboards</span>
-                                        <!--end::Title-->
                                     </a>
-                                    <!--end::Menu link-->
                                 </div>
-                                <!--end::Menu Item-->
-                                <!--begin:Menu item-->
                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                    <!--begin:Menu link-->
                                     <span class="menu-link">
                                         <span class="menu-icon">
                                             <i class="ki-duotone ki-abstract-26 fs-2">
@@ -389,12 +382,8 @@
                                         <span class="menu-title">Admin</span>
                                         <span class="menu-arrow"></span>
                                     </span>
-                                    <!--end:Menu link-->
-                                    <!--begin:Menu sub-->
                                     <div class="menu-sub menu-sub-accordion">
-                                        <!--begin:Menu item-->
                                         <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                            <!--begin:Menu link-->
                                             <span class="menu-link">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
@@ -402,72 +391,46 @@
                                                 <span class="menu-title">User Management</span>
                                                 <span class="menu-arrow"></span>
                                             </span>
-                                            <!--end:Menu link-->
-                                            <!--begin:Menu sub-->
                                             <div class="menu-sub menu-sub-accordion">
-                                                <!--begin:Menu item-->
                                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-                                                    <!--begin:Menu link-->
                                                     <a class="menu-link" href="{{ route('admin.user.list') }}">
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
                                                         <span class="menu-title">Users</span>
                                                     </a>
-                                                    <!--end:Menu link-->
                                                 </div>
-                                                <!--end:Menu item-->
-                                                <!--begin:Menu item-->
                                                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                                                    <!--begin:Menu link-->
                                                     <a class="menu-link" href="#">
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
                                                         <span class="menu-title">Roles</span>
                                                     </a>
-                                                    <!--end:Menu link-->
                                                 </div>
-                                                <!--end:Menu item-->
-                                                <!--begin:Menu item-->
                                                 <div class="menu-item">
-                                                    <!--begin:Menu link-->
                                                     <a class="menu-link" href="{{ route('admin.user.permission') }}">
                                                         <span class="menu-bullet">
                                                             <span class="bullet bullet-dot"></span>
                                                         </span>
                                                         <span class="menu-title">Permissions</span>
                                                     </a>
-                                                    <!--end:Menu link-->
                                                 </div>
-                                                <!--end:Menu item-->
                                             </div>
-                                            <!--end:Menu sub-->
                                         </div>
-                                        <!--end:Menu item-->
                                     </div>
-                                    <!--end:Menu sub-->
                                 </div>
-                                <!--end:Menu item-->
                             </div>
-                            <!--end::Sidebar menu-->
                         </div>
                     </div>
-                    <!--end::Navs-->
                 </div>
-                <!--end::Sidebar-->
-                <!--begin::Main-->
                 <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
                     <div class="d-flex flex-column flex-column-fluid">
-                        <!--begin::Content-->
                         <div id="kt_app_content" class="app-content flex-column-fluid">
-                            <!--begin::Content container-->
                             <div id="kt_app_content_container" class="app-container container-fluid">
                                 @yield('main')
                             </div>
-                            <!--end::Content container-->
                         </div>
-                        <!--end::Content-->
                     </div>
                     <div id="kt_app_footer" class="app-footer">
                         <!--begin::Footer container-->
@@ -495,13 +458,9 @@
                         <!--end::Footer container-->
                     </div>
                 </div>
-                <!--end:::Main-->
             </div>
-            <!--end::Wrapper-->
         </div>
-        <!--end::Page-->
     </div>
-    <!--end::App-->
     
     @yield('additional')
 @endsection
