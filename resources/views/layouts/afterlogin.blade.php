@@ -336,24 +336,31 @@
                                         <div data-kt-menu-trigger="click" class="menu-item @if ($child->children->isNotEmpty()) menu-accordion @endif">
                                             @if ($child->children->isNotEmpty())
                                             <span class="menu-link">
-                                                {!! $menu->icon !!}
-                                                <span class="menu-title">{{ $menu->title }}</span>
+                                                {!! $child->icon !!}
+                                                <span class="menu-title">{{ $child->title }}</span>
                                                 <span class="menu-arrow"></span>
                                             </span>
                                             <div class="menu-sub menu-sub-accordion">
-                                                
+                                                @foreach($child->children as $grandchild)
+                                                <div data-kt-menu-trigger="click" class="menu-item">
+                                                <a class="menu-link" href="{{ isset($grandchild->route_name) ? route($grandchild->route_name) : '#' }}">
+                                                        {!! $grandchild->icon !!}
+                                                        <span class="menu-title">{{ $grandchild->title }}</span>
+                                                    </a>
+                                                </div>
+                                                @endforeach
                                             </div>
                                             @else
-                                            <a class="menu-link" href="{{ route($menu->route_name) }}">
-                                                {!! $menu->icon !!}
-                                                <span class="menu-title">{{ $menu->title }}</span>
+                                            <a class="menu-link" href="{{ isset($child->route_name) ? route($child->route_name) : '#' }}">
+                                                {!! $child->icon !!}
+                                                <span class="menu-title">{{ $child->title }}</span>
                                             </a>
                                             @endif
                                         </div>
                                         @endforeach
                                     </div>
                                     @else
-                                    <a class="menu-link" href="{{ route($menu->route_name) }}">
+                                    <a class="menu-link" href="{{ isset($menu->route_name) ? route($menu->route_name) : '#' }}">
                                         {!! $menu->icon !!}
                                         <span class="menu-title">{{ $menu->title }}</span>
                                     </a>
